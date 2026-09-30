@@ -8,7 +8,7 @@ I'm accepting pull requests and other collaboration opportunities.
 
 ## PDF version
 
-PDF version is available for download on [the releases tab](https://github.com/4min/resume/releases)
+PDF version is available for download on [the releases tab](https://github.com/fominfo/resume/releases). Cloud Build makes it on every push to `master`; `python3 render.py` makes the same PDF on a Mac with `gh` and Chrome.
 
 # Create your own automated resume
 

@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/git'
   entrypoint: '/bin/sh'
-  args: ['-c', 'mkdir -p build']
+  args: ['-c', 'mkdir -p build && chmod 777 build']
 
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/${_GITHUB_USER_NAME}/${_GITHUB_REPO_NAME}']
@@ -14,14 +14,26 @@ steps:
 - name: 'dalibo/pandocker'
   args: [
     '-f', 'gfm',
-    'resume/${_FILENAME}.md', 
+    '${_GITHUB_REPO_NAME}/${_FILENAME}.md',
     '--template=pandoc-goodies/templates/html5/github/GitHub.html5',
     '--metadata', 'title=',
     '-o', 'build/${_FILENAME}.html'
     ]
 
-- name: 'madnight/docker-alpine-wkhtmltopdf'
-  args: ['--zoom', '${_PDF_ZOOM}', '--margin-right', '15mm', '--page-size', 'Legal', 'build/${_FILENAME}.html', 'build/${_FILENAME}.pdf']
+# The print CSS and the page-break blocks live in render.py, shared with the local build.
+- name: 'python:3-alpine'
+  entrypoint: 'python3'
+  args: ['${_GITHUB_REPO_NAME}/render.py', '--finish', 'build/${_FILENAME}.html', 'build/${_FILENAME}.html']
+
+# Headless Chrome prints it, as on the Mac; the image's entrypoint is chromium --headless.
+- name: 'zenika/alpine-chrome'
+  args: ['--no-sandbox', '--no-pdf-header-footer',
+         '--print-to-pdf=/workspace/build/${_FILENAME}.pdf', '/workspace/build/${_FILENAME}.html']
+
+# Two pages or no release: the zoom in render.py is tuned for exactly that.
+- name: 'python:3-alpine'
+  entrypoint: '/bin/sh'
+  args: ['-c', 'test "$(python3 ${_GITHUB_REPO_NAME}/render.py --pages build/${_FILENAME}.pdf)" = 2']
 
 - name: 'maniator/gh'
   entrypoint: '/bin/sh'
@@ -57,11 +69,10 @@ steps:
   secretEnv: ['GITHUB_TOKEN']
 
 substitutions:
-    _GITHUB_USER_NAME: 4min
+    _GITHUB_USER_NAME: fominfo
     _GITHUB_REPO_NAME: resume
     _FILENAME: ilya_fomin_cv
-    _PDF_ZOOM: "1.04"
-    
+
 availableSecrets:
   secretManager:
   - versionName: projects/$PROJECT_NUMBER/secrets/github-token/versions/1
