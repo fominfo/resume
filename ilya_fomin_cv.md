@@ -8,7 +8,7 @@ Engineering leader with nearly 20 years of management experience, building plane
 04/2026 – present **Independent — business-as-code and agentic SDLC (San Francisco Bay Area)**
 
   Advising and consulting for AI startups; running a few ventures as business-as-code on my own open-source platform.
-  + Startups: [spacesheep.dev](https://spacesheep.dev) (YC), [genselect.ai](https://genselect.ai), [neusis.ai](https://neusis.ai), [forgecinema.ai](https://forgecinema.ai).
+  + Startups: [genselect.ai](https://genselect.ai), [neusis.ai](https://neusis.ai), [forgecinema.ai](https://forgecinema.ai).
   + Ventures: [Regatta](https://220labs.dev/regatta) (the platform), [220 film](https://220labs.dev/220), [FFPP.pictures](https://ffpp.pictures) (+ more in stealth).
 
 03/2023 – 04/2026 **Engineering Lead @ YouTube / Google (San Bruno, CA)**
