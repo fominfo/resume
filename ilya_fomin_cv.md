@@ -1,15 +1,15 @@
 # ILYA FOMIN
 fomin@fom.info / (408) 239-3973 / [linkedin.com/in/fominfo](https://linkedin.com/in/fominfo)
 
-Engineering leader with nearly 20 years of management experience, building planetary-scale products and platforms. At YouTube Live, the world's largest live streaming platform, ran a 25-engineer, 3-team organization and led its LLM strategy and real-time ML classification.
+Engineering leader with nearly 20 years of management experience, building planetary-scale products and platforms. At YouTube Live, the world's largest live streaming platform, ran a 25-engineer, 3-team organization and led its LLM strategy and real-time ML classification. Since 2026, building business as code: companies run on AI agents.
 
 #### EMPLOYMENT
 
-04/2026 – present **Independent — agentic systems (San Francisco Bay Area)**
+04/2026 – present **Independent — business-as-code and agentic SDLC (San Francisco Bay Area)**
 
-  Designing and building multi-agent systems on Claude.
-  + Claudia: a home-automation platform that runs a household end-to-end: perception from cameras and sensors driving whole-house automations, coordination across 5+ home automation platforms, family organization, and human interfaces through screens, voice, and text. Operated as code.
-  + FFPP Pictures: hyper-personalized children's content generated end-to-end by an agentic pipeline.
+  Advising and consulting for AI startups; running a few ventures as business-as-code on my own open-source platform.
+  + Startups: [spacesheep.dev](https://spacesheep.dev) (YC), [genselect.ai](https://genselect.ai), [neusis.ai](https://neusis.ai), [forgecinema.ai](https://forgecinema.ai).
+  + Ventures: [Regatta](https://220labs.dev/regatta) (the platform), [220 film](https://220labs.dev/220), [FFPP.pictures](https://ffpp.pictures) (+ more in stealth).
 
 03/2023 – 04/2026 **Engineering Lead @ YouTube / Google (San Bruno, CA)**
 
